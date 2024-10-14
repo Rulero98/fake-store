@@ -1,12 +1,13 @@
 import { RouterProvider } from "react-router-dom"
-import { routerStore } from "./shop"
+import { routerShop } from "./shop"
+import { appRouter } from "./auth"
 
 export const FakeStore = () => {
   return (
     <>
 
-      <RouterProvider router={routerStore} />
-
+      {/* <RouterProvider router={routerShop} /> */}
+      <RouterProvider router={appRouter} />
 
     </>
   )
