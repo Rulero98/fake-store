@@ -1,0 +1,25 @@
+.w__container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem auto;
+  width: 75%;
+}
+
+.w__btn{
+  height: 200px;
+  border-radius: 5px;
+  padding: 0 .5rem ;
+  width: 3rem;
+}
+.w__btn:hover{
+  background-color: #eee;
+}
+.w__btn:active{
+  background-color: #cecece;
+}
+
+.w__img{
+  height: 200px;
+  width: 200px;
+}
