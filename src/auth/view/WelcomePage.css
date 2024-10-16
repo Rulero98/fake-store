@@ -1,25 +1,34 @@
+
 .w__container {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
-  margin: 1rem auto;
-  width: 75%;
+  margin: 5rem auto;
+  flex-wrap: wrap;
+  width: 40%;
 }
 
 .w__btn{
-  height: 200px;
+  height: 300px;
   border-radius: 5px;
   padding: 0 .5rem ;
   width: 3rem;
 }
 .w__btn:hover{
-  background-color: #eee;
+  background-color: #ffffff13;
 }
 .w__btn:active{
-  background-color: #cecece;
+  background-color: #ffffff0b;
 }
 
 .w__img{
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
+}
+
+.w__title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 48px;
+  text-align: center;
+  width: 100%;
 }
