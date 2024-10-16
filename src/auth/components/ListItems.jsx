@@ -8,9 +8,9 @@ export const ListItems = ({ items, noItem = 0 }) => {
           ? <img
             key={items[noItem].id}
             className="w__img animate__animated animate__fadeIn"
-            src={items[noItem].images[0]}
+            src={items[noItem].image}
           />
-          : 'Perate no hay imgs'
+          : 'Loading...'
       }
     </>
   )
