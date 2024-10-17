@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useFetch } from "../../hooks/useFetch"
 
 import { NavLink } from "react-router-dom"
@@ -6,12 +6,20 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl"
 import { ListItems } from "../components/ListItems"
 
 import './WelcomePage.css'
+import { useDispatch } from "react-redux"
+import { setDataShop } from "../../store"
 
 export const WelcomePage = () => {
 
   const { data } = useFetch('https://api.escuelajs.co/api/v1/categories')
   const [noImg, setNoImg] = useState(0)
 
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+    if (data) dispatch(setDataShop(data))
+  }, [data])
 
   const onPrevImg = () => {
     if (noImg > 0) setNoImg(noImg - 1)
