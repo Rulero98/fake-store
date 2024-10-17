@@ -5,10 +5,8 @@ import { appRouter } from "./auth"
 export const FakeStore = () => {
   return (
     <>
-
-      {/* <RouterProvider router={routerShop} /> */}
-      <RouterProvider router={appRouter} />
-
+        {/* <RouterProvider router={routerShop} /> */}
+        <RouterProvider router={appRouter} />
     </>
   )
 }

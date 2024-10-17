@@ -2,12 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 export const shopSlice = createSlice({
   name: 'shop',
   initialState: {
-    counter: 10
+    dataShop: {}
   },
   reducers: {
-    increment: (state, action) => {
-      state.counter += 1;
+
+    setDataShop: (state, action) => {
+      state.dataShop = action.payload
     },
   }
 });
-export const { increment } = shopSlice.actions;
+export const { setDataShop } = shopSlice.actions;

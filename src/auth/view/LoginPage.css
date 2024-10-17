@@ -1,0 +1,13 @@
+.lp__img{
+  align-items: center;
+  border-radius: 4%;
+  display: flex;
+  height: 700px;
+  width: 90%;
+}
+.lp__container{
+  height: 900px;
+}
+.lp__containterImg{
+ 
+}
