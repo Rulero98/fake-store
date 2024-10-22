@@ -1,0 +1,35 @@
+.lp__img {
+  align-items: center;
+  border-radius: 4%;
+  display: flex;
+  height: 700px;
+  max-width: 60%;
+  object-fit: cover;
+}
+
+.lp__container {
+  height: 900px;
+}
+.lp__containterLogin {
+  background-color: rgba(178, 255, 71, 0.156);
+  border-radius: 30px;
+  box-shadow: 4px 4px 10px;
+  padding: 4rem 0;
+}
+
+.lp__toRegister {
+  margin-left: .5rem;
+  text-decoration: underline;
+}
+
+.lp__input {
+  display: flex;
+  flex-direction: column;
+  margin: 1px;
+  width: 50%;
+}
+
+.lp__btn {
+  margin: 1px;
+  width: 50%;
+}

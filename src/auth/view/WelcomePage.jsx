@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useFetch } from "../../hooks/useFetch"
 
 import { NavLink } from "react-router-dom"
@@ -16,16 +16,19 @@ export const WelcomePage = () => {
 
   const dispatch = useDispatch()
 
-
   useEffect(() => {
     if (data) dispatch(setDataShop(data))
+  }, [data])
+
+  const dataMemo = useMemo(() => {
+    return data
   }, [data])
 
   const onPrevImg = () => {
     if (noImg > 0) setNoImg(noImg - 1)
   }
   const onNexImg = () => {
-    if (noImg < data.length - 1) setNoImg(noImg + 1)
+    if (noImg < dataMemo.length - 1) setNoImg(noImg + 1)
   }
   return (
     <>
@@ -33,7 +36,7 @@ export const WelcomePage = () => {
         <h3 className="w__title mb-5">FakeShop</h3>
         <SlArrowLeft className="w__btn" onClick={onPrevImg}> Prev </SlArrowLeft>
 
-        <ListItems items={data} noItem={noImg} />
+        <ListItems items={dataMemo} noItem={noImg} />
 
         <SlArrowRight className="w__btn" onClick={onNexImg}> Next </SlArrowRight>
 

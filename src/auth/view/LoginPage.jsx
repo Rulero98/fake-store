@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux"
 
-import './LoginPage.css'
+import './index.css'
+import { ImGoogle } from "react-icons/im"
+import { Link } from "react-router-dom"
 
 export const LoginPage = () => {
 
@@ -10,39 +12,43 @@ export const LoginPage = () => {
     <>
       <div className="lp__container d-flex justify-content-between w-75 m-auto align-items-center">
 
-        <div className="w-25">
-          <div >
-            <h1>Welcome to the FakeStore</h1>
-            <div className="d-flex flex-wrap">
+        <div className="lp__containterLogin w-50 d-flex flex-wrap justify-content-center">
 
-              <label className="w-100">Email</label>
-              <input className="w-100" />
-            </div>
-            <div className="d-flex flex-wrap">
 
-              <label className="w-100">Password</label>
-              <input className="w-100" />
-            </div>
+          <h1 className="w-100 text-center">Welcome to the <br/> FakeStore</h1>
 
+
+          <div className="lp__input">
+            <label className=" ">Email</label>
+            <input className=" " />
           </div>
-          <p>
-            Forgot password?
+
+
+          <div className="lp__input">
+            <label className="">Password</label>
+            <input className="" />
+          </div>
+
+
+          <p className="w-50 d-block">Forgot password?</p>
+
+          <button className="lp__btn btn btn-primary">Sign in</button>
+          <button className="lp__btn btn btn-secondary"> <ImGoogle /> Sign with Google</button>
+
+          <p className="w-50 mt-3">Don&apos;t have an account? <Link to={'/register'} >Click here</Link>
           </p>
-          <div className="d-flex justify-content-center flex-wrap gap-3">
-            <button className="w-100">Sign in</button>
-            <button className="w-100">Sign with Google</button>
-          </div>
-          <div>
-            <p>Don&apos;t have an account?</p>
-            <button className="btn btn-outline-primary">Sign Up</button>
-          </div>
         </div>
+
         <div className="d-flex justify-content-end lp__containterImg" >
           {
             (!dataShop)
               ? 'Loading...'
               : <img
-                src={dataShop[0].image}
+                src={
+                  (dataShop[0]?.image)
+                    ? dataShop[0].image
+                    : 'Loading'
+                }
                 alt="Loading..."
                 className="lp__img"
               />
