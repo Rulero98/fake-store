@@ -1,12 +1,17 @@
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { useForm } from "../../hooks/useForm"
 
 export const RegisterPage = () => {
 
   const { dataShop } = useSelector(state => state.shop)
 
-  const onCreateUser = () => {
+  const name = useForm({ type: 'text' })
+  const password = useForm({ type: 'password' })
 
+  const onCreateUser = (e) => {
+    e.preventDefault()
+    console.log(name)
   }
 
   return (
@@ -23,6 +28,9 @@ export const RegisterPage = () => {
           <label >Full name</label>
           <input
             type="text"
+            name="name"
+            placeholder="Full name"
+            {...name}
           />
         </div>
         <div className="lp__input">
@@ -41,7 +49,9 @@ export const RegisterPage = () => {
         <div className="lp__input">
           <label >Password</label>
           <input
-            type="password"
+            name="password"
+            placeholder="Password"
+            {...password}
           />
         </div>
         <div className="lp__input">
