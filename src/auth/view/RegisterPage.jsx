@@ -1,17 +1,25 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { useForm } from "../../hooks/useForm"
+import { addNewUser } from "../../store/authSlice"
+
+const formData = {
+  displayName: '',
+  email: '',
+  password: ''
+}
 
 export const RegisterPage = () => {
 
+  const dispatch = useDispatch()
+
   const { dataShop } = useSelector(state => state.shop)
 
-  const name = useForm({ type: 'text' })
-  const password = useForm({ type: 'password' })
+  const { displayName, email, password, onInputChange } = useForm(formData)
 
   const onCreateUser = (e) => {
     e.preventDefault()
-    console.log(name)
+    console.log(onInputChange)
   }
 
   return (
@@ -27,37 +35,41 @@ export const RegisterPage = () => {
         <div className="lp__input">
           <label >Full name</label>
           <input
-            type="text"
-            name="name"
+            name="displayName"
             placeholder="Full name"
-            {...name}
+            type='text'
+            value={displayName}
+            onChange={onInputChange}
           />
         </div>
-        <div className="lp__input">
-          <label >Username</label>
-          <input
-            type="text"
-          />
-        </div>
+
         <div className="lp__input">
           <label >Email</label>
           <input
-            type="email"
+            name="Email"
+            placeholder="Email"
+            value={email}
+            onChange={onInputChange}
           />
         </div>
 
         <div className="lp__input">
           <label >Password</label>
           <input
-            name="password"
-            placeholder="Password"
-            {...password}
+            name="Password"
+            placeholder="Paswword"
+            type="password"
+            value={password}
+            onChange={onInputChange}
           />
         </div>
+
         <div className="lp__input">
           <label >Confirm rassword</label>
           <input
+            name="confirmPassword"
             type="password"
+            placeholder="Confirm Password"
           />
         </div>
 
