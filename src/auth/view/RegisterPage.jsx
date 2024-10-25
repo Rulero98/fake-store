@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { useForm } from "../../hooks/useForm"
-import { addNewUser } from "../../store/authSlice"
 
 const formData = {
   displayName: '',
@@ -19,7 +18,7 @@ export const RegisterPage = () => {
 
   const onCreateUser = (e) => {
     e.preventDefault()
-    console.log(onInputChange)
+    console.log('hola')
   }
 
   return (
@@ -46,7 +45,7 @@ export const RegisterPage = () => {
         <div className="lp__input">
           <label >Email</label>
           <input
-            name="Email"
+            name="email"
             placeholder="Email"
             value={email}
             onChange={onInputChange}
@@ -56,7 +55,7 @@ export const RegisterPage = () => {
         <div className="lp__input">
           <label >Password</label>
           <input
-            name="Password"
+            name="password"
             placeholder="Paswword"
             type="password"
             value={password}

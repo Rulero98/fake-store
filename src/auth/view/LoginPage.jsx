@@ -1,12 +1,20 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 import './index.css'
 import { ImGoogle } from "react-icons/im"
 import { Link } from "react-router-dom"
+import { startGoogleSignIn } from "../../store/thunksAuth"
 
 export const LoginPage = () => {
 
   const { dataShop } = useSelector(state => state.shop)
+
+  const dispatch = useDispatch()
+
+  const onLoginWithGoogle = (e) => {
+    e.preventDefault()
+    dispatch(startGoogleSignIn())
+  }
 
   return (
     <>
@@ -15,7 +23,7 @@ export const LoginPage = () => {
         <div className="lp__containterLogin w-50 d-flex flex-wrap justify-content-center">
 
 
-          <h1 className="w-100 text-center">Welcome to the <br/> FakeStore</h1>
+          <h1 className="w-100 text-center">Welcome to the <br /> FakeStore</h1>
 
 
           <div className="lp__input">
@@ -33,7 +41,11 @@ export const LoginPage = () => {
           <p className="w-50 d-block">Forgot password?</p>
 
           <button className="lp__btn btn btn-primary">Sign in</button>
-          <button className="lp__btn btn btn-secondary"> <ImGoogle /> Sign with Google</button>
+
+          <button 
+          className="lp__btn btn btn-secondary"
+          onClick={onLoginWithGoogle}
+          > <ImGoogle /> Sign with Google</button>
 
           <p className="w-50 mt-3">Don&apos;t have an account? <Link to={'/register'} >Click here</Link>
           </p>
