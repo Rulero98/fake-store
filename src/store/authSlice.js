@@ -3,7 +3,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: {
 
-    status: 'checking',
+    status: 'no-authenticated', //checkking, authenticated, no-authenticated
     uid: null,
     name: null,
     email: null,
@@ -13,7 +13,11 @@ export const authSlice = createSlice({
 
   },
   reducers: {
-    addNewUser: (state, { payload }) => {
+    checkingStatus: (state) => {
+      state.status = 'checking'
+    },
+    login: (state, { payload }) => {
+      state.status = 'authenticated'
       state.uid = payload.uid;
       state.name = payload.name;
       state.email = payload.email;
@@ -22,4 +26,7 @@ export const authSlice = createSlice({
     },
   }
 });
-export const { addNewUser } = authSlice.actions;
+export const {
+  login,
+  checkingStatus
+} = authSlice.actions;
