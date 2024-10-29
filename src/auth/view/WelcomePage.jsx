@@ -28,7 +28,7 @@ export const WelcomePage = () => {
     if (noImg > 0) setNoImg(noImg - 1)
   }
   const onNexImg = () => {
-    if (noImg < dataMemo.length - 1) setNoImg(noImg + 1)
+    if (noImg < 4) setNoImg(noImg + 1)
   }
   return (
     <>

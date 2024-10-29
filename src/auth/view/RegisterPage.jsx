@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { useForm } from "../../hooks/useForm"
+import { startRegisterWithEmailAndPassword } from "../../store/thunksAuth"
 
 const formData = {
   displayName: '',
@@ -18,7 +19,8 @@ export const RegisterPage = () => {
 
   const onCreateUser = (e) => {
     e.preventDefault()
-    console.log('hola')
+     console.log(email,password,displayName)
+    dispatch(startRegisterWithEmailAndPassword({email,password,displayName}))
   }
 
   return (
