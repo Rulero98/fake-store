@@ -19,8 +19,7 @@ export const RegisterPage = () => {
 
   const onCreateUser = (e) => {
     e.preventDefault()
-     console.log(email,password,displayName)
-    dispatch(startRegisterWithEmailAndPassword({email,password,displayName}))
+    dispatch(startRegisterWithEmailAndPassword({ email, password, displayName }))
   }
 
   return (
@@ -49,6 +48,7 @@ export const RegisterPage = () => {
           <input
             name="email"
             placeholder="Email"
+            type="text"
             value={email}
             onChange={onInputChange}
           />
